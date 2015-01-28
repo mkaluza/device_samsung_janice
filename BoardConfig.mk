@@ -3,7 +3,7 @@
 TARGET_OTA_ASSERT_DEVICE := janice,i9070,GT-I9070
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_i9070_defconfig
+TARGET_KERNEL_CONFIG := mk_release_noswp_defconfig
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/janice/bluetooth
