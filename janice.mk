@@ -25,6 +25,9 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/11screen:system/etc/init.d/11screen
+
 # Init files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/device_tunables.rc:root/device_tunables.rc \

@@ -21,6 +21,10 @@
      for different hardware and product builds. -->
 <resources>
 
+    <!-- Maximum screen brightness allowed by the power manager.
+         The user is forbidden from setting the brightness above this level. -->
+    <integer name="config_screenBrightnessSettingMaximum">300</integer>
+
     <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
     Software implementation will be used if config_hardware_auto_brightness_available is not set -->
     <bool name="config_automatic_brightness_available">true</bool>
@@ -47,11 +51,11 @@
     than the size of the config_autoBrightnessLevels array.
     This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>20</item> <!-- (0 - 7) Very dark room -->
+        <item>4</item> <!-- (0 - 7) Very dark room -->
         <item>30</item> <!-- (7 - 75) Poor light ambient -->
-        <item>110</item> <!-- (75 - 1000) Indoor / shadows -->
-        <item>175</item> <!-- (1000 - 10000) Outdoor-->
-        <item>255</item> <!-- (10000 - 16000) Sunlight outdoor -->
+        <item>75</item> <!-- (75 - 1000) Indoor / shadows -->
+        <item>180</item> <!-- (1000 - 10000) Outdoor-->
+        <item>300</item> <!-- (10000 - 16000) Sunlight outdoor -->
     </integer-array>
     
     <!-- Array of output values for button backlight corresponding to the LUX values
@@ -59,7 +63,7 @@
     than the size of the config_autoBrightnessLevels array.
     This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessButtonBacklightValues">
-        <item>255</item> <!-- (0 - 7) Very dark room -->
+        <item>0</item> <!-- (0 - 7) Very dark room -->
         <item>255</item> <!-- (7 - 75) Poor light ambient -->
         <item>255</item> <!-- (75 - 1000) Indoor / shadows -->
         <item>0</item> <!-- (1000 - 10000) Outdoor-->

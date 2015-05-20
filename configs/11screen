@@ -1,0 +1,19 @@
+#!/system/bin/sh
+
+set -x
+
+tab=/sys/kernel/s6e63m0/panel/illumination_table
+
+for i in `seq 0 7`; do
+	echo $i $((i*10+5)) > $tab
+done
+
+for i in `seq 8 24`; do
+	echo $i $((i*12)) > $tab
+done
+for i in `seq 24 -1 8`; do
+	echo $i $((i*12)) > $tab
+done
+
+echo 0 4 > /sys/kernel/s6e63m0/panel/illumination_table
+echo 25 300 > /sys/kernel/s6e63m0/panel/illumination_table
