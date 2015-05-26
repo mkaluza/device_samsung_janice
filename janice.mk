@@ -53,9 +53,5 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/adm.sqlite-u8500:system/etc/adm.sqlite-u8500
 
-PRODUCT_COPY_FILES += \
-	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/UKM,system/UKM/) \
-	Synapse.apk:/system/app/Synapse.apk
-
 # Use non-open-source parts if present
 $(call inherit-product-if-exists, vendor/samsung/janice/janice-vendor-blobs.mk)
