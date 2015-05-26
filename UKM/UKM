@@ -20,9 +20,6 @@ if [ -d /system/UKM -a ! -d $UKM ]; then
 	for f in `find . -type f`; do
 		ln -s $PWD/$f $UKM/$f
 	done
-	toolbox mount -o rw,remount /system
-	chmod -R 755 /system/UKM
-	toolbox mount -o ro,remount /system
 fi
 # Delete known files that re-create uci config
 
