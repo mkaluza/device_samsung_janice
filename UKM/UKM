@@ -14,8 +14,15 @@ UCI_XBIN=/system/xbin/uci;
 # If ukm is in system, copy it to /data with symlinks to enable user modifications
 if [ -d /system/UKM -a ! -d $UKM ]; then
 	cd /system/UKM
-	find . -type d | xargs -i mkdir -p $UKM/'{}'
-	cp `find . -type f` $UKM/
+	for d in `find . -type d`; do
+		mkdir -p $UKM/$d
+	done
+	for f in `find . -type f`; do
+		ln -s $PWD/$f $UKM/$f
+	done
+	toolbox mount -o rw,remount /system
+	chmod -R 755 /system/UKM
+	toolbox mount -o ro,remount /system
 fi
 # Delete known files that re-create uci config
 
