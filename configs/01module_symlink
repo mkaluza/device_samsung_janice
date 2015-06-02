@@ -1,0 +1,9 @@
+#!/system/bin/sh
+
+n=`uname -r`
+
+if [ ! -e /system/lib/modules/$n ]; then
+	sysrw
+	ln -s /system/lib/modules /system/lib/modules/$n
+	sysro
+fi
