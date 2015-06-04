@@ -35,6 +35,7 @@ $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/01module_symlink:system/etc/init.d/01module_symlink \
+    $(LOCAL_PATH)/configs/00000setup:system/etc/init.d/00000setup \
     $(LOCAL_PATH)/configs/11screen:system/etc/init.d/11screen
 
 # Init files

@@ -1,0 +1,22 @@
+toolbox mount -o rw,remount /system
+
+#install/configure UKM
+cd /system/UKM
+for d in `find . -type d`; do
+	mkdir -p $UKM/$d
+done
+for f in `find . -type f`; do
+	[ ! -e $IKM/$f ] && ln -s $PWD/$f $UKM/$f
+done
+chmod -R 755 /system/UKM
+
+[ ! -e /system/xbin/uci ] && ln -s /data/UKM/uci /system/xbin/uci
+
+rm -f /etc/init.d/99UKM
+
+#remove crappy toolbox aliases so that busybox can be used
+cd /system/bin
+rm -f ps chown chmod top ln
+
+chmod 644 /etc/init.d/00000setup
+toolbox mount -o ro,remount /system
