@@ -2,6 +2,7 @@ toolbox mount -o rw,remount /system
 
 #install/configure UKM
 cd /system/UKM
+UKM=/data/UKM
 for d in `find . -type d`; do
 	mkdir -p $UKM/$d
 done
